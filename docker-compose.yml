@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  # Self-Hosted PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: school_attendance_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: attendance_user
+      POSTGRES_PASSWORD: school_secure_password_2026
+      POSTGRES_DB: school_attendance_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./server/src/config/schema.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U attendance_user -d school_attendance_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # School Attendance & Workforce OS Application Server
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: school_attendance_os
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      NODE_ENV: production
+      DATABASE_URL: postgresql://attendance_user:school_secure_password_2026@postgres:5432/school_attendance_db
+      JWT_SECRET: school_attendance_jwt_secure_key_2026_standalone
+      CORS_ORIGIN: "http://localhost:3000"
+      SCHOOL_ID: "RCIS"
+
+volumes:
+  postgres_data:
+    driver: local

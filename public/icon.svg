@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f2b5c" />
+      <stop offset="100%" stop-color="#1e40af" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+  </defs>
+  <!-- Background with rounded squircle safe zone -->
+  <rect width="512" height="512" rx="112" fill="url(#grad)" />
+  <!-- Decorative corner scan brackets -->
+  <path d="M 112 176 L 112 128 A 16 16 0 0 1 128 112 L 176 112" fill="none" stroke="#38bdf8" stroke-width="20" stroke-linecap="round" />
+  <path d="M 400 176 L 400 128 A 16 16 0 0 0 384 112 L 336 112" fill="none" stroke="#38bdf8" stroke-width="20" stroke-linecap="round" />
+  <path d="M 112 336 L 112 384 A 16 16 0 0 0 128 400 L 176 400" fill="none" stroke="#38bdf8" stroke-width="20" stroke-linecap="round" />
+  <path d="M 400 336 L 400 384 A 16 16 0 0 1 384 400 L 336 400" fill="none" stroke="#38bdf8" stroke-width="20" stroke-linecap="round" />
+  <!-- Center School Shield & QR element -->
+  <path d="M 256 160 Q 320 180 340 220 C 340 310 256 360 256 360 C 256 360 172 310 172 220 Q 192 180 256 160 Z" fill="#ffffff" />
+  <!-- Inner Academic check / QR pattern -->
+  <path d="M 224 250 L 246 272 L 292 222" fill="none" stroke="#0f2b5c" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Mini QR pixels -->
+  <rect x="200" y="296" width="20" height="20" rx="4" fill="#0284c7" />
+  <rect x="292" y="296" width="20" height="20" rx="4" fill="#0284c7" />
+  <rect x="246" y="306" width="20" height="20" rx="4" fill="#10b981" />
+</svg>

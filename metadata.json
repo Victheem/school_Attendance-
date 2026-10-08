@@ -1,0 +1,6 @@
+{
+  "name": "School Attendance & Workforce OS",
+  "description": "One attendance system for your entire school. Teachers, staff, drivers and students — online or offline.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

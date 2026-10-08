@@ -1,0 +1,21 @@
+{
+  "id": "/",
+  "name": "Teacher Attendance OS",
+  "short_name": "TeacherOS",
+  "description": "Offline-First QR Teacher Attendance & Staff Management System for Schools",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0f172a",
+  "theme_color": "#0f2b5c",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512 192x192 any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
